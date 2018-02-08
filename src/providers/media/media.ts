@@ -7,6 +7,7 @@ export class MediaProvider {
   username: string;
   password: string;
   status: string;
+  test = 'StuffHere';
 
   apiUrl = 'http://media.mw.metropolia.fi/wbma';
   mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
@@ -55,6 +56,10 @@ export class MediaProvider {
         localStorage.getItem('token')),
     };
     return this.http.post(this.apiUrl + '/media', formData, settings);
+  }
+
+  getNewFiles() {
+    return this.http.get(this.apiUrl + '/media?start=2&limit=10');
   }
 
 }

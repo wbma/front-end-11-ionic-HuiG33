@@ -15,6 +15,18 @@
 
 
 <ion-content padding>
-
+<ion-item *ngFor="let file of fileArray">
+  <ion-card>
+    <img [src]="mediaProvider.mediaUrl + file.thumbnail" [alt]="file.title">
+    <ion-card-content>
+      <ion-card-title>
+        Title
+      </ion-card-title>
+      <p>
+        Description
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-item>
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
