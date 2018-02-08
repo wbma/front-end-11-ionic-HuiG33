@@ -9,12 +9,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>This is login/registration page</ion-title>
+    <ion-title>This is registration page</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <form (ngSubmit)="register()">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.username" placeholder="Username" name="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.password" placeholder="Password" name="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.email" placeholder="Email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.full_name" placeholder="Full name" name="full_name"></ion-input>
+    </ion-item>
+    <button ion-button secondary="submit">Register</button>
+  </form>
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
 

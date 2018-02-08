@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormGroup} from '@angular/forms';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {User} from '../../interfaces/user';
+import {MediaProvider} from '../../providers/media/media';
+import {HttpErrorResponse} from '@angular/common/http';
 
 /**
  * Generated class for the RegistrationPage page.
@@ -15,13 +17,29 @@ import {FormGroup} from '@angular/forms';
   templateUrl: 'registration.html',
 })
 export class RegistrationPage {
-  private todo: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, public navParams: NavParams, private mediaProvider: MediaProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrationPage');
+  }
+
+  user: User = {
+    username: '',
+    password: '',
+    email: '',
+  };
+
+  register() {
+    console.log(this.user);
+
+    this.mediaProvider.register(this.user).subscribe(response => {
+      console.log(response);
+    }, (error: HttpErrorResponse) => {
+      console.log(error);
+    });
   }
 
 }

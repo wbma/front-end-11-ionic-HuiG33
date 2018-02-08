@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,6 +12,8 @@ import {ProfilePage} from '../pages/profile/profile';
 import {RegistrationPage} from '../pages/registration/registration';
 import {EventsPage} from '../pages/events/events';
 import {UploadPage} from '../pages/upload/upload';
+import {HttpClientModule} from '@angular/common/http';
+import {LoginPage} from '../pages/login/login';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,13 @@ import {UploadPage} from '../pages/upload/upload';
     EventsPage,
     ProfilePage,
     RegistrationPage,
-    UploadPage
+    UploadPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,13 +37,14 @@ import {UploadPage} from '../pages/upload/upload';
     EventsPage,
     ProfilePage,
     RegistrationPage,
-    UploadPage
+    UploadPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MediaProvider
+    MediaProvider,
   ]
 })
 export class AppModule {}

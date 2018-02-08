@@ -15,6 +15,18 @@
 
 
 <ion-content padding>
+  <form (ngSubmit)="startUpload()">
+    <ion-item>
+      <ion-input type="file" name="file" (change)="setFile($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="media.title" placeholder="Title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-textarea type="text" [(ngModel)]="media.description" placeholder="Description" name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button secondary="submit">Upload</button>
+  </form>
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
 
