@@ -12,6 +12,7 @@ import { MediaProvider } from '../providers/media/media';
 import {ProfilePage} from '../pages/profile/profile';
 import {RegistrationPage} from '../pages/registration/registration';
 import {EventsPage} from '../pages/events/events';
+import {UploadPage} from '../pages/upload/upload';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {EventsPage} from '../pages/events/events';
     HomePage,
     EventsPage,
     ProfilePage,
-    RegistrationPage
+    RegistrationPage,
+    UploadPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {EventsPage} from '../pages/events/events';
     HomePage,
     EventsPage,
     ProfilePage,
-    RegistrationPage
+    RegistrationPage,
+    UploadPage
   ],
   providers: [
     StatusBar,

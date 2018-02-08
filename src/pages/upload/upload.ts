@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormGroup} from '@angular/forms';
 
 /**
- * Generated class for the RegistrationPage page.
+ * Generated class for the UploadPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,17 +10,16 @@ import {FormGroup} from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-registration',
-  templateUrl: 'registration.html',
+  selector: 'page-upload',
+  templateUrl: 'upload.html',
 })
-export class RegistrationPage {
-  private todo: FormGroup;
+export class UploadPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistrationPage');
+    console.log('ionViewDidLoad UploadPage');
   }
 
 }
